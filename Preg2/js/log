@@ -1,0 +1,15 @@
+--2014-11-22 11:11:02--  http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js
+Resolviendo ajax.googleapis.com (ajax.googleapis.com)... 64.233.185.95, 2607:f8b0:4002:c09::5f
+Conectando con ajax.googleapis.com (ajax.googleapis.com)[64.233.185.95]:80... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: no especificado [text/javascript]
+Grabando a: “jquery-ui.min.js”
+
+     0K .......... .......... .......... .......... ..........  124K
+    50K .......... .......... .......... .......... ..........  246K
+   100K .......... .......... .......... .......... ..........  169K
+   150K .......... .......... .......... .......... ..........  342K
+   200K .......... .......... ..                                206K=1,2s
+
+2014-11-22 11:11:03 (192 KB/s) - “jquery-ui.min.js” guardado [228002]
+

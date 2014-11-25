@@ -2,6 +2,74 @@
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
+
+class connection{
+
+	private $db;
+	private $collection;
+
+	//se inicializa la clase con los nombres de la bd y de la colleccion a la que 
+	//queremos conectarnos.
+	public function __construct($db,$collection) {
+        $this->db = $db;
+        $this->collection = $collection;
+    }
+
+    //se implementa recién la conexion y se devuelve la conexion.
+    function conectar(){
+    	$conn = new MongoClient();
+    	$this->db = $conn->selectDB('miraflorespark');
+    	$this->collection = new MongoCollection($this->db, $this->collection);
+    	return $conn;
+
+    }
+
+    function insertar($array_documento){
+    	$this->collection->insert($array_documento);
+    }
+
+    function delete($clave,$valor){
+    	$this->collection->remove(array($clave => $valor));
+    }
+
+    function update($criterio_busqueda,$new_data){
+    	$this->collection->update($criterio_busqueda,$new_data);
+    }
+
+    function read($criterio_busqueda){
+    	return $this->collection->find($criterio_busqueda);
+    }
+
+}
+
+
+$conexion = new connection("miraflorespark","cajeros");
+$conexion->conectar();
+
+//insertar valores
+//$cajero = array("nombre" => "Pablo Marmol", "cod_cajero" => "MP1234" );
+//$conexion->insertar($cajero);
+
+
+//actualizar valores
+//$criterio_busqueda = array("nombre" => "Pablo Marmol");
+//$new_data = array("nombre" => "Pablo Marmol","cod_cajero" => "MP9867");
+//$conexion->update($criterio_busqueda,$new_data);
+
+//encontrar valores:
+
+$criterio_busqueda = array("nombre" => "Pablo Marmol", "cod_cajero"=>"MP9765");
+$query = $conexion->read($criterio_busqueda);
+
+foreach($query as $doc){
+	var_dump($doc);
+}
+
+//echo "Cajero Registrado";
+//echo "Cajero Borrado";
+//echo "Cajero Actualizado"; 
+
+
 /*$m = new MongoClient();
 $db = $m->selectDB('mensajes');
 $collection = new MongoCollection($db, 'produce');
@@ -28,7 +96,7 @@ foreach ($cursor as $doc) {
 //http://php.net/manual/en/class.mongoclient.php
 
 
-try{
+/*try{
 	$mongo = new MongoClient(); //creamos una conexion a MongoDB
 	$db = $mongo ->miraflorespark;
 	$collection = $db->createCollection("cajeros");
@@ -42,6 +110,6 @@ try{
 }catch(MongoConnectionException $e) {
   // manejamos los errores
   die($e->getMessage());
-}
+}*/
 
 ?>

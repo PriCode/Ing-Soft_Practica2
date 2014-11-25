@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>System AdminPackage</title>
+<title>Panel de Control</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/londinium-theme.css" rel="stylesheet" type="text/css">
@@ -271,6 +271,8 @@
 <!-- /Barrra de busqueda-->
 
 	<div class="block">
+
+	<div class="row">
 	<!-- Grafico izquierdo -->
 		<div class="col-md-6">
 			<div class="panel panel-default">
@@ -281,11 +283,6 @@
 					        <div style="padding: 0px; position: relative;" class="graph-standard" id="pie"><canvas height="250" width="302" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 302px; height: 250px;" class="flot-base"></canvas><canvas height="250" width="302" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 302px; height: 250px;" class="flot-overlay"></canvas><span class="pieLabel" id="pieLabel0" style="position: absolute; top: 45px; left: 183.5px;"><div style="font-size:8pt;text-align:center;padding:2px;color:white;">Series1<br>23%</div></span><span class="pieLabel" id="pieLabel1" style="position: absolute; top: 168px; left: 186.5px;"><div style="font-size:8pt;text-align:center;padding:2px;color:white;">Series2<br>30%</div></span><span class="pieLabel" id="pieLabel2" style="position: absolute; top: 120px; left: 46.5px;"><div style="font-size:8pt;text-align:center;padding:2px;color:white;">Series3<br>39%</div></span></div>
 				        </div>
 			  </div>
-
-
-
-
-
 
 		</div>
 	<!-- /Grafico izquierdo -->	
@@ -303,9 +300,10 @@
 			 </div>
 	 	</div>
 		<!-- /Grafico derecho -->
+	</div>
 
 		<h6 class="heading-hr"><i class="icon-stack"></i> Registros</h6>
-	
+	<div class="row">
 		<!-- columna-izquierda /TB-Listado sensores -->
 		<div class="col-md-5">
 
@@ -437,8 +435,8 @@
 				</div>
 		<!-- columna-derecha /TB-Listado rutas activas -->
 
-
 	</div>  
+</div>
 	<!-- /page-tabs- content -->
 
 
@@ -636,6 +634,14 @@
 				</div>
 </div>
 	<!-- /Modal -->
+
+
+
+<script type="text/javascript" src="js/principal.js" >
+	
+
+	
+</script>
 
 
 

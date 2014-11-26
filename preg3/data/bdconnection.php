@@ -1,7 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
 
 class connection{
 
@@ -58,12 +58,11 @@ $conexion->conectar();
 
 //encontrar valores:
 
-$criterio_busqueda = array("nombre" => "Pablo Marmol", "cod_cajero"=>"MP9765");
-$query = $conexion->read($criterio_busqueda);
-
-foreach($query as $doc){
-	var_dump($doc);
-}
+//$criterio_busqueda = array("nombre" => "Pablo Marmol", "cod_cajero"=>"MP9765");
+//$query = $conexion->read($criterio_busqueda);
+//foreach($query as $doc){
+	//var_dump($doc);
+//}
 
 //echo "Cajero Registrado";
 //echo "Cajero Borrado";

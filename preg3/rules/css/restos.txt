@@ -1,1 +1,0 @@
-background:url("../images/metal_bg.png") no-repeat 11px 22px ;

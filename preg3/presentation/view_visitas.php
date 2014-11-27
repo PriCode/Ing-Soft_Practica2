@@ -65,48 +65,39 @@
             
         	</div>
 
-            <div id="contenedor" align="center">
-        
-                <table class="table table-bordered">
-                <tr>
-                <td>Conductor</td><td>Placa Automovil</td><td>Marca/Modelo</td><td>Color</td><td>Codigo Estacionamiento</td><td>Fecha Llegada</td><td>Fecha Salida</td>
-                </tr>
-
-                <tr id="respuesta">
-                	
-                </tr>
-
-            	<script>
-				function loadXMLDoc(){
-					var xmlhttp;
-					if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
-  						xmlhttp=new XMLHttpRequest();
-  					}
-					else{// code for IE6, IE5
-  						xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  					}
-					xmlhttp.onreadystatechange=function(){
-  						if (xmlhttp.readyState==4 && xmlhttp.status==200){
-    						document.getElementById("respuesta").innerHTML=xmlhttp.responseText;
-    					}
-  					}
-
-  					//option = document.combobox.value;
-
-					xmlhttp.open("POST","../rules/list_llegada.php",true);
-					xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-					xmlhttp.send();
-				}
-				</script>
+            <div id="contenedor" align="center">        
+                
+                <div id="respuesta">
+                
+                </div>         	
             	
-            	<br>
-            	<br>
             </div>
             
         </form>
 
-        <br>
-        <br>
+
+<script>
+                function loadXMLDoc(){
+                    var xmlhttp;
+                    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                    }
+                    else{// code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    xmlhttp.onreadystatechange=function(){
+                        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                            document.getElementById("respuesta").innerHTML=xmlhttp.responseText;
+                        }
+                    }
+
+                    //option = document.combobox.value;
+
+                    xmlhttp.open("POST","../rules/list_llegada.php",true);
+                    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                    xmlhttp.send();
+                }
+                </script>
 
 </body>
 </html>

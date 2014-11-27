@@ -44,7 +44,7 @@
 	$position = rand(1,100);
 
 	$cod_estac = $section."".$position; 
-
+	$fecha_sal = "";
 
 	//nos conectamos a la capa de datos.
 	require_once("../data/bdconnection.php");
@@ -53,7 +53,7 @@
 
 	//insertar valores
 	$cajero = array("Placa_Auto" => $placa, "marca_auto" => $marca, "color_auto" => $color_auto, 
-					"conductor" => $conductor, "fecha_ingreso" => $fechayhora, "cod_estac" => $cod_estac);
+					"conductor" => $conductor, "fecha_ingreso" => $fechayhora, "cod_estac" => $cod_estac, "fecha_salida"=> $fecha_sal);
 	$conexion->insertar($cajero);
 
 	echo "									Registro Ingresado.\n

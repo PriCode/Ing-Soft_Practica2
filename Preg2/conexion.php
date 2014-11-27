@@ -6,7 +6,6 @@
 		private $db;
 		private $conexion;
 
-
 		public function __construct($user,$pas,$db){
 			$this->user=$user;
 			$this->pass=$pas;
@@ -22,10 +21,6 @@
 		public function getConn(){
 			return $this->conexion;
 		}
-
-
-
-	
 	}
 
 ?>

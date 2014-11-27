@@ -4,40 +4,27 @@ include('View.php');
 include('Controller.php');
 
 $model = new Model();
-$controllerSensor = new Controller($model);
-$viewSensor = new View($controllerSensor, $model);
+
+$controllerSensor = new SensorController($model);
+$viewSensor = new SensorListarView($controllerSensor, $model);
+
+$controllerRuta = new RutaController($model);
+$viewRuta = new RutaListarView($controllerRuta, $model);
  
+$controlador=$_POST['controlador'];
+$accion=$_POST['accion'];
 
-$evento=$_POST['ordenSensor'];
+if (isset($controlador)){			
+	if ($controlador==="sensor") {
+				$controllerSensor->{"accion".$accion}();
+				$viewSensor->render();
+	}else{
 
-//echo "<pre>".var_dump($evento)."</pre>";
-
-if (isset($evento)){	
-	if ($evento=="sensores") {						
-			$result=$controllerSensor->listarTabla($evento);	
-			echo $result;
-			echo $viewSensor->muestra($result);
+		if ($controlador==="ruta") {
+				$controllerRuta->{"accion".$accion}();
+				$viewRuta->output();
+		}
 	}
-
-
-
-
-}else{
-			echo "ningun evento recibido";
 }
 
-
-
-// if (isset($_GET['action']) && !empty($_GET['action'])) {
-//     $controller->{$_GET['action']}();
-// }
- 
-
-
-//$controllerRuta = new Controller($model);
-//$viewRuta = new View($controller, $model);
-
-//echo $view->output();
-
 ?>
-

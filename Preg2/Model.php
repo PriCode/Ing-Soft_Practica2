@@ -3,7 +3,7 @@ require('conexion.php');
 
 class Model
 {
-    //public $string;
+    
     private $model_db;
     private $result;
 
@@ -13,35 +13,67 @@ class Model
         $this->conexion_db->conn();
     }
 
-	public function listar($tabla){
+
+
+	public function getListarSensor(){
 		$connection=$this->conexion_db->getConn();
-		$query = "select id,cod_sensor,estado from TB_$tabla";
-		echo $query;
+		$query = "select id,cod_sensor,estado from TB_sensores";
+		$results = $connection->query($query);		
+		 $this->result=json_encode($results);
+		var_dump($this->result);
+
+		//$num_results = $results->num_rows;		
+		//$this->result="<p>Cantidad de registros: ".$num_results."</p>";
+
+	}
+
+
+	public function getListarRuta(){
+		$connection=$this->conexion_db->getConn();
+		$query = "select id,cod_sensor,estado from TB_sensor";
 		$results = $connection->query($query);
-		var_dump($results);
+
 		$num_results = $results->num_rows;		
 		$this->result="<p>Cantidad de registros: ".$num_results."</p>";
 	}
 
+ 	public function addListarSensor(){    	
 
+    
+    }
+    
+    public function delListarSensor(){    	
 
+    		
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-	public  function getResult(){
-		return $this->result;
+	public function setListarSensor(){    	
+	    		
+	}
+    
+	public function output(){    	
+	    return $this->result;
 	}
 
 
- }
 
- ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+?>

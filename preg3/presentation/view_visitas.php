@@ -72,6 +72,10 @@
                 <td>Conductor</td><td>Placa Automovil</td><td>Marca/Modelo</td><td>Color</td><td>Codigo Estacionamiento</td><td>Fecha Llegada</td><td>Fecha Salida</td>
                 </tr>
 
+                <tr id="respuesta">
+                	
+                </tr>
+
             	<script>
 				function loadXMLDoc(){
 					var xmlhttp;
@@ -87,21 +91,16 @@
     					}
   					}
 
-  					option = document.combobox.value;
-  					/*placa = document.formulario.placa.value;
-        			color_auto = document.formulario.color_auto.value;
-        			conductor = document.formulario.conductor.value;
-        			marca = document.formulario.marca.value;*/
+  					//option = document.combobox.value;
 
 					xmlhttp.open("POST","../rules/list_llegada.php",true);
 					xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-					xmlhttp.send("num_rows="+option);
+					xmlhttp.send();
 				}
 				</script>
             	
             	<br>
             	<br>
-            	<div id="respuesta"></div>	<!--class="btn"-->
             </div>
             
         </form>

@@ -40,6 +40,10 @@ class connection{
     	return $this->collection->find($criterio_busqueda);
     }
 
+    function findall(){
+        return $this->collection->find();
+    }
+
 }
 
 

@@ -91,7 +91,7 @@
             	<button onclick="loadXMLDoc()" name="enviar" type="button" class="btn">Registrar Llegada</button>
             	<br>
             	<br>
-            	<div id="respuesta"></div>	<!--class="btn"-->
+            	<div id="respuesta"></div>
             </div>
             
         </form>

@@ -47,10 +47,7 @@
 	}
 
 
-	/*Ingresar los datos de salida.
-	tomamos los valores anteriormente usados de $criterio_busqueda(para encontrar 
-	el elemento de la collección que queremos actualizar) y $results donde tenemos
-	todos los datos de ese elemento.*/
+	/*Ingresar los datos de salida.*/
 	$new_data = array("Placa_Auto" => $placa_a,"marca_auto" => $marca, 
 				"color_auto"=>$color,"conductor"=>$conductor,
 				"fecha_ingreso"=>$fecha_ingreso,"cod_estac"=>$estac,

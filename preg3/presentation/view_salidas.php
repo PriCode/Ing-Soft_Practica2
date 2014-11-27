@@ -40,8 +40,6 @@
                 
             </ul>
 
-        <!--</div>-->
-
         <br>
         <br>
         <br>
@@ -54,17 +52,8 @@
             	
             	<label>Placa de Automovil:</label>
             	<p><input type="text" name="placa" id="placa" align="center" class="input-small" placeholder="Placa del Auto"></p>
-            	<label>Marca y modelo del Automovil:</label>
-            	<p><input type="text" name="marca" id="marca" class="input-small" placeholder="Marca y modelo Automovil"></p>	
-            	<label>Color del Automovil:</label>
-            	<p><input type="text" name="color_auto" id="color_auto" class="input-small" placeholder="Color Automovil"></p>
-            	<label>Conductor:</label>
-            	<p><input type="text" name="conductor" id="conductor" class="input-small" placeholder="Nombre Conductor"></p>
-            	<br>
-            	<br>
-
             	<script>
-				function loadXMLDoc(){
+				function loadXMLDoc_salidas(){
 					var xmlhttp;
 					if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
   						xmlhttp=new XMLHttpRequest();
@@ -79,19 +68,17 @@
   					}
 
   					placa = document.formulario.placa.value;
-        			color_auto = document.formulario.color_auto.value;
-        			conductor = document.formulario.conductor.value;
-        			marca = document.formulario.marca.value;
+                    //document.write(placa);
 
-					xmlhttp.open("POST","../rules/reg_llegada.php",true);
+					xmlhttp.open("POST","../rules/reg_salidas.php",true);
 					xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-					xmlhttp.send("placa="+placa+"&marca="+marca+"&color_auto="+color_auto+"&conductor="+conductor);
+					xmlhttp.send("placa="+placa);
 				}
 				</script>
-            	<button onclick="loadXMLDoc()" name="enviar" type="button" class="btn">Registrar Llegada</button>
+            	<button onclick="loadXMLDoc_salidas()" name="enviar" type="button" class="btn">Registrar Salida</button>
             	<br>
             	<br>
-            	<div id="respuesta"></div>
+            	<div id="respuesta"></div>	<!--class="btn"-->
             </div>
             
         </form>

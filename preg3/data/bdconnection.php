@@ -43,8 +43,8 @@ class connection{
 }
 
 
-$conexion = new connection("miraflorespark","cajeros");
-$conexion->conectar();
+/*$conexion = new connection("miraflorespark","cajeros");
+$conexion->conectar();*/
 
 //insertar valores
 //$cajero = array("nombre" => "Pablo Marmol", "cod_cajero" => "MP1234" );
@@ -57,12 +57,12 @@ $conexion->conectar();
 //$conexion->update($criterio_busqueda,$new_data);
 
 //encontrar valores:
-
-//$criterio_busqueda = array("nombre" => "Pablo Marmol", "cod_cajero"=>"MP9765");
-//$query = $conexion->read($criterio_busqueda);
-//foreach($query as $doc){
-	//var_dump($doc);
-//}
+//nombre" => "Pablo Marmol","cod_cajero"=>"MP9765" 
+/*$criterio_busqueda = array("nombre" => "Pablo Marmol");
+$query = $conexion->read($criterio_busqueda);
+foreach($query as $doc){
+	var_dump($doc);
+}*/
 
 //echo "Cajero Registrado";
 //echo "Cajero Borrado";

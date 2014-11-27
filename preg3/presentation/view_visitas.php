@@ -37,31 +37,40 @@
                 <li><a href="view_visitas.php">Ver historial de llegadas</a></li>
                 <li><a href="list_visitas.php">Monitorear Camaras</a></li>
                 
-                
             </ul>
 
-        <!--</div>-->
-
         <br>
         <br>
-        <br>
-
+        <h1>Ultimas Llegadas registradas</h1>
+        
+        
         <form name="formulario" class="form-inline" align="center" method="post" action="">
         	
-			<br>
-			<br>
+
+        	<div id="container" align = "right">
+            <tr>
+                <td>
+                    <select name="combobox" id="combobox">
+                        <option name="default" id="default" selected="true" style="display:none;">Ultimas visitas</option>
+                        <option name="5" id="5" value="5">5</option>
+                        <option name="10" id="10" value="10">10</option>
+                        <option name="20" id="20" value="20">20</option>
+                        <option name="all" id="all"value="all">Todos</option>
+                    </select>
+                </td>
+                <td>
+                    <button onclick="loadXMLDoc()" name="enviar" align="left" type="button" class="btn">Registrar Llegada</button>        
+                </td>    
+            </tr>
+            
+        	</div>
+
             <div id="contenedor" align="center">
-            	
-            	<label>Placa de Automovil:</label>
-            	<p><input type="text" name="placa" id="placa" align="center" class="input-small" placeholder="Placa del Auto"></p>
-            	<label>Marca y modelo del Automovil:</label>
-            	<p><input type="text" name="marca" id="marca" class="input-small" placeholder="Marca y modelo Automovil"></p>	
-            	<label>Color del Automovil:</label>
-            	<p><input type="text" name="color_auto" id="color_auto" class="input-small" placeholder="Color Automovil"></p>
-            	<label>Conductor:</label>
-            	<p><input type="text" name="conductor" id="conductor" class="input-small" placeholder="Nombre Conductor"></p>
-            	<br>
-            	<br>
+        
+                <table class="table table-bordered">
+                <tr>
+                <td>Conductor</td><td>Placa Automovil</td><td>Marca/Modelo</td><td>Color</td><td>Codigo Estacionamiento</td><td>Fecha Llegada</td><td>Fecha Salida</td>
+                </tr>
 
             	<script>
 				function loadXMLDoc(){
@@ -78,17 +87,18 @@
     					}
   					}
 
-  					placa = document.formulario.placa.value;
+  					option = document.combobox.value;
+  					/*placa = document.formulario.placa.value;
         			color_auto = document.formulario.color_auto.value;
         			conductor = document.formulario.conductor.value;
-        			marca = document.formulario.marca.value;
+        			marca = document.formulario.marca.value;*/
 
-					xmlhttp.open("POST","../rules/reg_llegada.php",true);
+					xmlhttp.open("POST","../rules/list_llegada.php",true);
 					xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-					xmlhttp.send("placa="+placa+"&marca="+marca+"&color_auto="+color_auto+"&conductor="+conductor);
+					xmlhttp.send("num_rows="+option);
 				}
 				</script>
-            	<button onclick="loadXMLDoc()" name="enviar" type="button" class="btn">Registrar Llegada</button>
+            	
             	<br>
             	<br>
             	<div id="respuesta"></div>	<!--class="btn"-->
